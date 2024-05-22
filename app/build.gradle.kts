@@ -47,6 +47,6 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
-    implementation ("com.google.dagger:dagger:2.x")
-    kapt ("com.google.dagger:dagger-compiler:2.x")
+    implementation ("com.google.dagger:dagger:2.44.2")
+    kapt ("com.google.dagger:dagger-compiler:2.44.2")
 }

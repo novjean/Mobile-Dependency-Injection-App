@@ -1,8 +1,9 @@
 package com.novatech.mobiledependencyapp
 
 import android.util.Log
+import javax.inject.Inject
 
-class Display {
+class Display @Inject constructor() {
     init {
         Log.i("TAGY", "screen created")
     }
