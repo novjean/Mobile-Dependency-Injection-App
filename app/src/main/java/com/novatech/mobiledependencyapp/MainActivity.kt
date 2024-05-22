@@ -22,7 +22,11 @@ class MainActivity : AppCompatActivity() {
 //        val serviceProvider = ServiceProvider()
 //        val simCard = SimCard(serviceProvider)
 
-        val mobile = Mobile(Battery(), SimCard(ServiceProvider()), Display())
+        val serviceProvider = ServiceProvider()
+        val simCard = SimCard()
+        simCard.setServiceProvider(serviceProvider)
+
+        val mobile = Mobile(Battery(), simCard, Display())
         mobile.turnOnMobile()
     }
 }
