@@ -24,7 +24,8 @@ class MainActivity : AppCompatActivity() {
 
         val serviceProvider = ServiceProvider()
         val simCard = SimCard()
-        simCard.setServiceProvider(serviceProvider)
+        simCard.serviceProvider = ServiceProvider()
+//        simCard.setServiceProvider(serviceProvider)
 
         val mobile = Mobile(Battery(), simCard, Display())
         mobile.turnOnMobile()
