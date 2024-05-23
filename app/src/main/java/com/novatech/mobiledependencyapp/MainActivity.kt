@@ -43,10 +43,12 @@ class MainActivity : AppCompatActivity() {
 //        mobile.turnOnMobile()
 
         // custom creation passing resolution value
-        DaggerMobileComponent.builder()
-            .amoledDisplayModule(AmoledDisplayModule(1920))
-            .build()
-            .inject(this)
+//        DaggerMobileComponent.builder()
+//            .amoledDisplayModule(AmoledDisplayModule(1920))
+//            .build()
+//            .inject(this)
+
+        (application as MobileApplication).mobile.inject(this)
 
     }
 }
