@@ -1,7 +1,7 @@
 package com.novatech.mobiledependencyapp
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
+//import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -11,7 +11,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+//        enableEdgeToEdge()
         setContentView(R.layout.activity_main)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -32,6 +32,8 @@ class MainActivity : AppCompatActivity() {
 //        val mobile = Mobile(Battery(), simCard, Display())
 //        mobile.turnOnMobile()
 
+        //rebuild the app and the these classes get generated
+        DaggerMobileComponent.create().getMobileInstance().turnOnMobile()
 
 
     }
