@@ -5,9 +5,12 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var mobile: Mobile
+
+    @Inject
+    lateinit var mobile: Mobile
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,8 +36,17 @@ class MainActivity : AppCompatActivity() {
 //        mobile.turnOnMobile()
 
         //rebuild the app and the these classes get generated
-        DaggerMobileComponent.create().getMobileInstance().turnOnMobile()
+//        DaggerMobileComponent.create().getMobileInstance().turnOnMobile()
 
+        // simple creation
+//        DaggerMobileComponent.create().inject(this)
+//        mobile.turnOnMobile()
+
+        // custom creation passing resolution value
+        DaggerMobileComponent.builder()
+            .amoledDisplayModule(AmoledDisplayModule(1920))
+            .build()
+            .inject(this)
 
     }
 }
